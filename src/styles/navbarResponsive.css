@@ -1,0 +1,52 @@
+
+/* ------------------------- */
+/*  RESPONSIVE MOBILE VIEW   */
+/* ------------------------- */
+.menu-icon {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    background: none;
+    color: black;
+    z-index: 20;
+  }
+  
+  /* Fade + blur dropdown animation */
+  @media (max-width: 768px) {
+    .menu-icon {
+      display: block;
+    }
+  
+     
+  
+    .nav-links.active {
+      max-height: 320px;
+      opacity: 1;
+      filter: blur(0);
+      pointer-events: all;
+      top:7.3vh;
+      padding: 0vh 4vw; 
+    }
+  
+    .nav-links li {
+      padding: 10px 0;
+      animation: fadeSlideUp 0.3s ease forwards;
+    }
+  
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    #nav-logo {
+      width: 10vw;
+    }
+   
+  }
+  

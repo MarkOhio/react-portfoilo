@@ -1,0 +1,77 @@
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Whole page */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--mainbg);
+  color: #111;
+  width: 100%;
+}
+.App {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Navbar */ 
+/* 
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #27ae60;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #27ae60;
+}
+ 
+.fade-enter {
+  opacity: 0;
+  filter: blur(5px);
+}
+.fade-enter-active {
+  opacity: 1;
+  filter: blur(0);
+  transition: opacity 0.6s ease, filter 0.6s ease;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+} */
+
+
+
+
+
+
+
+
+
+
+ 

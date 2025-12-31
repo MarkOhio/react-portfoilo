@@ -1,0 +1,12 @@
+
+.techscramble {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  white-space: nowrap;
+  font-family: inherit;
+  font-size: 2rem;
+  color: inherit;
+  width: 100px;
+}

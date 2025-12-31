@@ -1,0 +1,35 @@
+Got it — here’s the full color palette from your prompt, mapped to what each color is used for, including the theme toggle options (Dark / Electric Blue / Neon Green). I’ve extracted and labeled everything clearly:
+
+---
+
+🎨 Core Color Palette
+
+Color Name Hex Code Usage Description
+Primary Background `#0A0F1F` Main background color (dark navy)
+Accent `#00FF88` Neon green for CTAs, highlights, buttons
+Secondary `#1E1E1E` Cards, sections, or UI blocks
+Text Light `#FFFFFF` Light text on dark backgrounds
+Text Dark `#111111` Dark text (likely for light mode)
+Highlight `#00BFFF` Electric blue for links, hover states, or highlights
+
+---
+
+🌗 Theme Toggle Options
+These are optional color schemes mentioned under `theme_toggle`:
+
+Theme Mode Hex Code Description
+Dark Mode `#0A0F1F` Already listed as primary background
+Electric Blue Mode `#00BFFF` Already listed as highlight color
+Neon Green Mode `#00FF88` Already listed as accent color
+
+---
+
+✅ Summary of All Unique Colors:
+- `#0A0F1F` – Primary background (Dark Mode)
+- `#00FF88` – Accent / Neon Green Mode
+- `#1E1E1E` – Secondary UI elements
+- `#FFFFFF` – Light text
+- `#111111` – Dark text
+- `#00BFFF` – Highlight / Electric Blue Mode
+
+Let me know if you want these grouped into CSS variables or a theme object.

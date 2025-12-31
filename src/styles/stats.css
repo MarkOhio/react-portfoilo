@@ -1,0 +1,50 @@
+.stats-section {
+   
+    color: var(--text);
+    padding: 1vh 0vw;
+    text-align: center;
+  }
+  
+  .stats-container {
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px; 
+    margin: 0 auto; 
+  }
+  
+  .stat-box {
+    flex: 1 1 200px;
+    min-width: 200px;
+    padding: 1vh;
+    background: inherit;
+    border-radius: 15px;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  
+  .stat-box:hover ,  #demoVid:hover{
+    transform: translateY(-5px);
+    background: var(--bg);
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--special);
+    margin: 0;
+    margin-bottom: 5px;
+  }
+  
+  .stat-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 1px; 
+    color: var(--text);
+  }
+
+  #demoVid{
+  border-radius: 10px;
+  }
+  

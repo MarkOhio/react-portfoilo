@@ -1,0 +1,120 @@
+/* ----------  OVERLAY + CARD  ---------- */
+.pq-modal{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  animation:fade .3s ease;
+}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+.pq-card{
+  background:#fff;
+  width:90%;
+  max-width:420px;
+  padding:2rem;
+  border-radius:8px;
+  box-shadow:0 8px 25px rgba(0,0,0,.3);
+}
+
+.pq-q{
+  font-size:1.25rem;
+  margin:0 0 1.2rem;
+  color:#222;
+  text-align:center;
+}
+
+.pq-opts{
+  display:flex;
+  flex-direction:column;
+  gap:.75rem;
+}
+
+.pq-btn{
+  width:100%;
+  padding:.85rem 1rem;
+  font-size:1rem;
+  border:1px solid #ccc;
+  border-radius:4px;
+  background:#fff;
+  cursor:pointer;
+  transition:background .2s, border-color .2s;
+}
+.pq-btn:hover{
+  background:#f5f5f5;
+  border-color:#888;
+}
+
+/* ----------  RESULT BLOCK  ---------- */
+.pq-result{
+  margin-top:2rem;
+  text-align:center;
+  padding:2rem 1rem;
+  background:#fafafa;
+  border-radius:8px;
+}
+
+.pq-result-h{
+  margin:0 0 .5rem;
+  font-size:1.5rem;
+  color:#222;
+}
+
+.pq-price{
+  font-size:2.2rem;
+  font-weight:bold;
+  color:#007b00;
+  margin:.5rem 0;
+}
+
+.pq-words{
+  font-size:1.1rem;
+  color:#555;
+  margin-bottom:1.5rem;
+}
+
+.pq-wa{
+  display:inline-block;
+  background:#25d366;
+  color:#fff;
+  padding:.75rem 1.5rem;
+  border-radius:4px;
+  font-weight:bold;
+  text-decoration:none;
+  transition:background .2s;
+}
+.pq-wa:hover{background:#128c7e}
+
+/* ----------  VIDEO WRAPPER  ---------- */
+.pq-wrap{
+  max-width:900px;
+  margin:2rem auto;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+.pq-video-box{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  background:#000;
+  border-radius:8px;
+  overflow:hidden;
+}
+
+.pq-video{
+  width:100%;
+  height:100%;
+  display:block;
+  outline:none;
+}
+
+/* ----------  MOBILE  ---------- */
+@media(max-width:600px){
+  .pq-card{padding:1.5rem}
+  .pq-result-h{font-size:1.3rem}
+  .pq-price{font-size:1.8rem}
+  .pq-wrap{margin:1rem}
+  .pq-video-box{ overflow: visible;}
+}

@@ -1,0 +1,16 @@
+
+/* slideLeftFade.css */
+.slide-left-fade {
+  animation: slideLeftFade 0.6s ease-out both;
+}
+
+@keyframes slideLeftFade {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

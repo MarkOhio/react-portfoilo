@@ -1,0 +1,521 @@
+<!DOCTYPE html>  <html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>CSS Grid Layout Generator</title> 
+    <style> 
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        }  body { 
+        background-color: #f5f7fa; 
+        color: #333; 
+        line-height: 1.6; 
+        padding: 20px; 
+    } 
+
+    .container { 
+        max-width: 1200px; 
+        margin: 0 auto; 
+    } 
+
+    header { 
+        text-align: center; 
+        margin-bottom: 30px; 
+    } 
+
+    h1 { 
+        color: #2c3e50; 
+        margin-bottom: 10px; 
+    } 
+
+    .description { 
+        color: #7f8c8d; 
+        max-width: 700px; 
+        margin: 0 auto; 
+    } 
+
+    .app-container { 
+        display: flex; 
+        flex-direction: column; 
+        gap: 30px; 
+    } 
+
+    @media (min-width: 768px) { 
+        .app-container { 
+            flex-direction: row; 
+        } 
+         
+        .controls { 
+            flex: 1; 
+        } 
+         
+        .grid-section { 
+            flex: 2; 
+        } 
+    } 
+
+    .panel { 
+        background: white; 
+        border-radius: 8px; 
+        padding: 20px; 
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
+    } 
+
+    .form-group { 
+        margin-bottom: 15px; 
+    } 
+
+    label { 
+        display: block; 
+        margin-bottom: 5px; 
+        font-weight: 500; 
+        color: #2c3e50; 
+    } 
+
+    input[type="number"] { 
+        width: 100%; 
+        padding: 10px; 
+        border: 1px solid #ddd; 
+        border-radius: 4px; 
+        font-size: 16px; 
+    } 
+
+    button { 
+        background: #3498db; 
+        color: white; 
+        border: none; 
+        padding: 12px 20px; 
+        border-radius: 4px; 
+        cursor: pointer; 
+        font-size: 16px; 
+        font-weight: 500; 
+        transition: background 0.3s; 
+        width: 100%; 
+        margin-top: 10px; 
+    } 
+
+    button:hover { 
+        background: #2980b9; 
+    } 
+
+    .grid-display { 
+        position: relative; 
+        margin-top: 20px; 
+        border: 1px solid #ddd; 
+        overflow: auto; 
+    } 
+
+    .grid-container { 
+        display: grid; 
+        gap: 0; 
+        position: relative; 
+        min-height: 400px; 
+    } 
+
+    .grid-cell { 
+        border: 1px dashed #ddd; 
+        min-height: 40px; 
+        position: relative; 
+    } 
+
+    .axis-label { 
+        position: absolute; 
+        font-size: 12px; 
+        color: #7f8c8d; 
+        background: #f8f9fa; 
+        padding: 2px 5px; 
+        z-index: 1; 
+    } 
+
+    .col-label { 
+        top: -25px; 
+        left: 50%; 
+        transform: translateX(-50%); 
+    } 
+
+    .row-label { 
+        left: -40px; 
+        top: 50%; 
+        transform: translateY(-50%); 
+    } 
+
+    .grid-item { 
+        position: absolute; 
+        background: rgba(52, 152, 219, 0.7); 
+        border: 2px solid #3498db; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        color: white; 
+        font-weight: bold; 
+        cursor: move; 
+        z-index: 10; 
+        overflow: hidden; 
+    } 
+
+    .grid-item-number { 
+        font-size: 16px; 
+    } 
+
+    .grid-item-close { 
+        position: absolute; 
+        top: 2px; 
+        right: 5px; 
+        cursor: pointer; 
+        font-size: 14px; 
+        color: white; 
+        font-weight: bold; 
+    } 
+
+    .code-output { 
+        margin-top: 30px; 
+    } 
+
+    pre { 
+        background: #2c3e50; 
+        color: #ecf0f1; 
+        padding: 15px; 
+        border-radius: 4px; 
+        overflow: auto; 
+        max-height: 300px; 
+        margin-top: 10px; 
+        font-size: 14px; 
+    } 
+
+    .hidden { 
+        display: none; 
+    } 
+
+    .color-1 { background: rgba(52, 152, 219, 0.7); border-color: #3498db; } 
+    .color-2 { background: rgba(46, 204, 113, 0.7); border-color: #2ecc71; } 
+    .color-3 { background: rgba(155, 89, 182, 0.7); border-color: #9b59b6; } 
+    .color-4 { background: rgba(241, 196, 15, 0.7); border-color: #f1c40f; } 
+    .color-5 { background: rgba(230, 126, 34, 0.7); border-color: #e67e22; } 
+    .color-6 { background: rgba(231, 76, 60, 0.7); border-color: #e74c3c; } 
+    .color-7 { background: rgba(26, 188, 156, 0.7); border-color: #1abc9c; } 
+    .color-8 { background: rgba(149, 165, 166, 0.7); border-color: #95a5a6; } 
+    .color-9 { background: rgba(52, 73, 94, 0.7); border-color: #34495e; } 
+    .color-10 { background: rgba(243, 156, 18, 0.7); border-color: #f39c12; } 
+</style>
+
+</head> 
+<body> 
+    <div class="container"> 
+        <header> 
+            <h1>CSS Grid Layout Generator</h1> 
+            <p class="description"> Does that grid thing that is always hard to remember</p> 
+        </header>  <div class="app-container"> 
+        <div class="controls panel"> 
+            <h2>Grid Settings</h2> 
+            <div class="form-group"> 
+                <label for="columns">Number of Columns</label> 
+                <input type="number" id="columns" min="1" max="12" value="3"> 
+            </div> 
+            <div class="form-group"> 
+                <label for="rows">Number of Rows</label> 
+                <input type="number" id="rows" min="1" max="12" value="3"> 
+            </div> 
+            <div class="form-group"> 
+                <label for="col-gap">Column Gap (px)</label> 
+                <input type="number" id="col-gap" min="0" max="50" value="0"> 
+            </div> 
+            <div class="form-group"> 
+                <label for="row-gap">Row Gap (px)</label> 
+                <input type="number" id="row-gap" min="0" max="50" value="0"> 
+            </div> 
+            <button id="apply-btn">Apply Settings</button> 
+            <button id="show-code-btn">Show Code</button> 
+            <button id="reset-btn">Reset Grid</button> 
+        </div> 
+
+        <div class="grid-section panel"> 
+            <h2>Grid Preview</h2> 
+            <p>Click and drag to create grid items (max: 10)</p> 
+            <div class="grid-display"> 
+                <div class="grid-container" id="grid-container"></div> 
+            </div> 
+        </div> 
+    </div> 
+
+    <div class="code-output panel hidden" id="code-output"> 
+        <h2>Generated Code</h2> 
+        <div class="html-code"> 
+            <h3>HTML</h3> 
+            <pre id="html-code"></pre> 
+        </div> 
+        <div class="css-code"> 
+            <h3>CSS</h3> 
+            <pre id="css-code"></pre> 
+        </div> 
+    </div> 
+</div> 
+
+<script> 
+    document.addEventListener('DOMContentLoaded', function() { 
+        // DOM Elements 
+        const columnsInput = document.getElementById('columns'); 
+        const rowsInput = document.getElementById('rows'); 
+        const colGapInput = document.getElementById('col-gap'); 
+        const rowGapInput = document.getElementById('row-gap'); 
+        const applyBtn = document.getElementById('apply-btn'); 
+        const showCodeBtn = document.getElementById('show-code-btn'); 
+        const resetBtn = document.getElementById('reset-btn'); 
+        const gridContainer = document.getElementById('grid-container'); 
+        const codeOutput = document.getElementById('code-output'); 
+        const htmlCode = document.getElementById('html-code'); 
+        const cssCode = document.getElementById('css-code'); 
+         
+        // State variables 
+        let isDrawing = false; 
+        let startCell = null; 
+        let currentItem = null; 
+        let gridItems = []; 
+        let itemCount = 0; 
+         
+        // Initialize the grid 
+        createGrid(3, 3); 
+         
+        // Event listeners 
+        applyBtn.addEventListener('click', function() { 
+            const columns = parseInt(columnsInput.value) || 3; 
+            const rows = parseInt(rowsInput.value) || 3; 
+            createGrid(columns, rows); 
+            codeOutput.classList.add('hidden'); 
+        }); 
+         
+        showCodeBtn.addEventListener('click', generateCode); 
+         
+        resetBtn.addEventListener('click', function() { 
+            gridItems.forEach(item => item.element.remove()); 
+            gridItems = []; 
+            itemCount = 0; 
+            codeOutput.classList.add('hidden'); 
+        }); 
+         
+        // Create grid function 
+        function createGrid(columns, rows) { 
+            // Clear existing grid 
+            gridContainer.innerHTML = ''; 
+             
+            // Remove existing grid items 
+            gridItems.forEach(item => item.element.remove()); 
+            gridItems = []; 
+            itemCount = 0; 
+             
+            // Set grid styles 
+            gridContainer.style.gridTemplateColumns = `repeat(${columns}, 1fr)`; 
+            gridContainer.style.gridTemplateRows = `repeat(${rows}, 1fr)`; 
+            gridContainer.style.gap = `${rowGapInput.value}px ${colGapInput.value}px`; 
+             
+            // Create grid cells 
+            for (let r = 1; r <= rows; r++) { 
+                for (let c = 1; c <= columns; c++) { 
+                    const cell = document.createElement('div'); 
+                    cell.className = 'grid-cell'; 
+                    cell.dataset.row = r; 
+                    cell.dataset.col = c; 
+                     
+                    // Add column labels (only for first row) 
+                    if (r === 1) { 
+                        const colLabel = document.createElement('div'); 
+                        colLabel.className = 'axis-label col-label'; 
+                        colLabel.textContent = `${c} (1fr)`; 
+                        cell.appendChild(colLabel); 
+                    } 
+                     
+                    // Add row labels (only for first column) 
+                    if (c === 1) { 
+                        const rowLabel = document.createElement('div'); 
+                        rowLabel.className = 'axis-label row-label'; 
+                        rowLabel.textContent = `${r} (1fr)`; 
+                        cell.appendChild(rowLabel); 
+                    } 
+                     
+                    // Add event listeners for drawing 
+                    cell.addEventListener('mousedown', startDrawing); 
+                    cell.addEventListener('touchstart', startDrawingTouch); 
+                     
+                    cell.addEventListener('mouseover', continueDrawing); 
+                    cell.addEventListener('touchmove', continueDrawingTouch); 
+                     
+                    cell.addEventListener('mouseup', stopDrawing); 
+                    cell.addEventListener('touchend', stopDrawing); 
+                     
+                    gridContainer.appendChild(cell); 
+                } 
+            } 
+        } 
+         
+        // Drawing functions 
+        function startDrawing(e) { 
+            if (itemCount >= 10) return; 
+             
+            e.preventDefault(); 
+            isDrawing = true; 
+            const cell = e.target.closest('.grid-cell'); 
+            startCell = cell; 
+             
+            createGridItem(cell); 
+        } 
+         
+        function startDrawingTouch(e) { 
+            if (itemCount >= 10) return; 
+             
+            e.preventDefault(); 
+            isDrawing = true; 
+            const touch = e.touches[0]; 
+            const cell = document.elementFromPoint(touch.clientX, touch.clientY).closest('.grid-cell'); 
+            startCell = cell; 
+             
+            createGridItem(cell); 
+        } 
+         
+        function createGridItem(cell) { 
+            if (!cell) return; 
+             
+            itemCount++; 
+            const item = document.createElement('div'); 
+            item.className = `grid-item color-${(itemCount % 10) || 10}`; 
+             
+            const itemNumber = document.createElement('div'); 
+            itemNumber.className = 'grid-item-number'; 
+            itemNumber.textContent = `div ${itemCount}`; 
+             
+            const closeBtn = document.createElement('div'); 
+            closeBtn.className = 'grid-item-close'; 
+            closeBtn.textContent = '×'; 
+            closeBtn.addEventListener('click', function(e) { 
+                e.stopPropagation(); 
+                item.remove(); 
+                gridItems = gridItems.filter(i => i.element !== item); 
+                itemCount--; 
+            }); 
+             
+            item.appendChild(itemNumber); 
+            item.appendChild(closeBtn); 
+             
+            gridContainer.appendChild(item); 
+             
+            currentItem = item; 
+             
+            // Set initial position 
+            const col = parseInt(cell.dataset.col); 
+            const row = parseInt(cell.dataset.row); 
+             
+            updateItemPosition(item, row, col, row, col); 
+        } 
+         
+        function continueDrawing(e) { 
+            if (!isDrawing || !currentItem) return; 
+             
+            e.preventDefault(); 
+            const cell = e.target.closest('.grid-cell'); 
+            if (!cell) return; 
+             
+            updateCurrentItem(cell); 
+        } 
+         
+        function continueDrawingTouch(e) { 
+            if (!isDrawing || !currentItem) return; 
+             
+            e.preventDefault(); 
+            const touch = e.touches[0]; 
+            const cell = document.elementFromPoint(touch.clientX, touch.clientY).closest('.grid-cell'); 
+            if (!cell) return; 
+             
+            updateCurrentItem(cell); 
+        } 
+         
+        function updateCurrentItem(cell) { 
+            const startCol = parseInt(startCell.dataset.col); 
+            const startRow = parseInt(startCell.dataset.row); 
+            const currentCol = parseInt(cell.dataset.col); 
+            const currentRow = parseInt(cell.dataset.row); 
+             
+            const rowStart = Math.min(startRow, currentRow); 
+            const rowEnd = Math.max(startRow, currentRow); 
+            const colStart = Math.min(startCol, currentCol); 
+            const colEnd = Math.max(startCol, currentCol); 
+             
+            updateItemPosition(currentItem, rowStart, colStart, rowEnd, colEnd); 
+        } 
+         
+        function updateItemPosition(item, rowStart, colStart, rowEnd, colEnd) { 
+            // Calculate position based on grid gaps 
+            const colGap = parseInt(colGapInput.value); 
+            const rowGap = parseInt(rowGapInput.value); 
+             
+            const cellWidth = (gridContainer.offsetWidth - (colGap * (parseInt(columnsInput.value) - 1))) / parseInt(columnsInput.value); 
+            const cellHeight = (gridContainer.offsetHeight - (rowGap * (parseInt(rowsInput.value) - 1))) / parseInt(rowsInput.value); 
+             
+            const left = (colStart - 1) * (cellWidth + colGap); 
+            const top = (rowStart - 1) * (cellHeight + rowGap); 
+            const width = (colEnd - colStart + 1) * cellWidth + (colEnd - colStart) * colGap; 
+            const height = (rowEnd - rowStart + 1) * cellHeight + (rowEnd - rowStart) * rowGap; 
+             
+            item.style.left = `${left}px`; 
+            item.style.top = `${top}px`; 
+            item.style.width = `${width}px`; 
+            item.style.height = `${height}px`; 
+             
+            // Store position data 
+            item.dataset.rowStart = rowStart; 
+            item.dataset.colStart = colStart; 
+            item.dataset.rowEnd = rowEnd + 1; // grid-area uses end line, not cell index 
+            item.dataset.colEnd = colEnd + 1; // grid-area uses end line, not cell index 
+        } 
+         
+        function stopDrawing() { 
+            if (!isDrawing || !currentItem) return; 
+             
+            isDrawing = false; 
+             
+            // Save the item to our array 
+            gridItems.push({ 
+                element: currentItem, 
+                rowStart: parseInt(currentItem.dataset.rowStart), 
+                colStart: parseInt(currentItem.dataset.colStart), 
+                rowEnd: parseInt(currentItem.dataset.rowEnd), 
+                colEnd: parseInt(currentItem.dataset.colEnd) 
+            }); 
+             
+            currentItem = null; 
+            startCell = null; 
+        } 
+         
+        // Code generation 
+        function generateCode() { 
+            if (gridItems.length === 0) { 
+                alert('Please create at least one grid item first.'); 
+                return; 
+            } 
+             
+            // Generate HTML code 
+            let html = '&lt;div class="grid-container"&gt;\n'; 
+            for (let i = 1; i <= itemCount; i++) { 
+                html += `  &lt;div class="div${i}"&gt;&lt;/div&gt;\n`; 
+            } 
+            html += '&lt;/div&gt;'; 
+             
+            htmlCode.innerHTML = html; 
+             
+            // Generate CSS code 
+            let css = `.grid-container {\n  display: grid;\n  grid-template-columns: repeat(${columnsInput.value}, 1fr);\n  grid-template-rows: repeat(${rowsInput.value}, 1fr);\n  gap: ${rowGapInput.value}px ${colGapInput.value}px;\n}\n\n`; 
+             
+            gridItems.forEach((item, index) => { 
+                css += `.div${index + 1} {\n  grid-area: ${item.rowStart} / ${item.colStart} / ${item.rowEnd} / ${item.colEnd};\n}\n\n`; 
+            }); 
+             
+            cssCode.textContent = css; 
+             
+            // Show the code output 
+            codeOutput.classList.remove('hidden'); 
+        } 
+    }); 
+</script>
+
+</body> 
+</html> 

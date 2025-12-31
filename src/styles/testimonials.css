@@ -1,0 +1,147 @@
+
+ 
+  .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0.5rem 0;
+  }
+  
+  .review-card {
+    max-width: 400px;
+    background: #1c1c1c;
+    padding: 0.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.4s ease;
+  }
+  
+  .message {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+  }
+  
+  .author {
+    color: #61dafb;
+    font-weight: 600;
+  }
+  
+  .nav2-btn {
+    background: transparent;
+    border: none;
+    color: #61dafb;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .nav2-btn:hover {
+    color: #1e90ff;
+  }
+   
+
+.testimonials {
+  text-align: center;
+  padding: 2rem;
+  background: #111;
+  color: #eee;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+ 
+.leave-btn {
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  background: #61dafb;
+  color: #000000;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s, background 0.3s;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.leave-btn:hover {
+  background: #1e90ff;
+  transform: translateY(-2px);
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #1c1c1c;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.modal h3 {
+  margin-bottom: 1rem;
+}
+
+.modal input,
+.modal textarea {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.7rem;
+  background: #111;
+  color: #eee;
+  border: 1px solid #333;
+  border-radius: 6px;
+}
+
+.modal button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.modal button[type="submit"] {
+  background: #61dafb;
+  color: #111;
+}
+
+.close-btn {
+  background: #333;
+  color: #eee;
+  margin-left: 1rem;
+}
+
+.no-reviews {
+  color: rgb(116, 116, 116);
+  background: #333;
+  border-radius: 20px;
+  margin: 10px auto;
+  font-style: italic;
+  width: 295px;
+  height: 165px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+  
+  /* ===== RESPONSIVE ===== */
+  @media (min-width: 1024px) {
+   
+  }
+  
+  @media (max-width: 768px) {
+    
+  }
