@@ -2,7 +2,7 @@
 .skills-section {
   
   padding:  5px;
-  background: #202020;
+  background: var(--bg);
   color: #f5f5f5;
   text-align: center;
   justify-content: center;
@@ -16,7 +16,7 @@
 .skills-header {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #58a6ff;
+  color: var(--special);
   letter-spacing: 1px;
 }
 
@@ -91,7 +91,7 @@
 
 .skills-btn {
   margin: 1rem  auto ;
-  background: #238636;
+  background: var(--special);
   color: white;
   border: none;
   padding: 10px ;
@@ -100,10 +100,12 @@
   font-size: 0.9rem;
   width: 50%;
   transition: background 0.3s;
+  text-decoration: none;
 }
 
 .skills-btn:hover {
-  background: #2ea043;
+  background: #2ea04300;
+  border: 1px solid var(--btnbg);
 }
 
 @media (max-width: 768px) {

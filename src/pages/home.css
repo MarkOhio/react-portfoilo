@@ -10,7 +10,7 @@
   /* Whole page */
   body {
     font-family: 'Poppins', sans-serif;
-    background: #e6e6e6;
+    background: var(--mainbg)
     color: #111;
     width: 100%; 
    

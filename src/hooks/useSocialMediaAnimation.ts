@@ -1,11 +1,11 @@
 
 import { useRef, useEffect } from "react";
-import { useAnimation, Variants, AnimationControls } from "framer-motion";
+import { useAnimation, Variants } from "framer-motion";
 import { useInView } from "framer-motion";
 
 type HookReturn = {
-  ref: React.RefObject<HTMLElement>;
-  controls: AnimationControls;
+  ref: React.RefObject<HTMLDivElement | null>;
+  controls: ReturnType<typeof useAnimation>;
   listVariant: Variants;
   itemVariant: Variants;
 };
@@ -17,7 +17,7 @@ type HookReturn = {
 * - uses Framer Motion's useAnimation + useInView for reliability.
 */
 export default function useSocialMediaAnimation(): HookReturn {
-  const ref = useRef<HTMLElement | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
   const controls = useAnimation();
   // `useInView` will watch the ref and mark true when the element is visible
   const inView = useInView(ref, { once: true, margin: "-10% 0px -10% 0px" });

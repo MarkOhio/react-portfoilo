@@ -69,7 +69,7 @@
   font-size: 1.8rem;
   cursor: pointer;
   background: none;
-  color: black;
+  color:var(--text);
   z-index: 20;
 }
 
@@ -127,5 +127,9 @@
   #nav-logo {
     width: 10vw;
   }
+  .nav-links li a {
+  color: var(--color);
+  
+}
 }
 

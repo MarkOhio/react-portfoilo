@@ -16,7 +16,7 @@ const projects: Project[] = [
   {
     name: "Portfolio Website",
     description: "My personal portfolio built with React and TypeScript.",
-    image: "/tall.jpg",
+    image: "tall.jpg",
     link: "https://myportfolio.com",
     languages: ["React", "TypeScript", "CSS"],
     year: "2025",
@@ -24,7 +24,7 @@ const projects: Project[] = [
   {
     name: "E-Commerce Store",
     description: "A modern tech store built with HTML, CSS, and JS.",
-    image: "/flat.jpg",
+    image: "flat.jpg",
     link: "https://storeexample.com",
     languages: ["HTML", "CSS", "JavaScript"],
     year: "2024",
@@ -32,7 +32,7 @@ const projects: Project[] = [
   {
     name: "Node API Server",
     description: "A RESTful API built with Node.js and Express.",
-    image: "/tall.jpg",
+    image: "tall.jpg",
     link: "https://apiserver.com",
     languages: ["Node", "JavaScript"],
     year: "2023",
@@ -40,7 +40,7 @@ const projects: Project[] = [
   {
     name: "E-Commerce Store",
     description: "A modern tech store built with HTML, CSS, and JS.",
-    image: "/flat.jpg",
+    image: "flat.jpg",
     link: "https://storeexample.com",
     languages: ["HTML", "CSS", "JavaScript"],
     year: "2024",
@@ -48,7 +48,7 @@ const projects: Project[] = [
   {
     name: "Node API Server",
     description: "A RESTful API built with Node.js and Express.",
-    image: "/tall.jpg",
+    image: "tall.jpg",
     link: "https://apiserver.com",
     languages: ["Node", "JavaScript"],
     year: "2023",
@@ -56,7 +56,7 @@ const projects: Project[] = [
   {
     name: "E-Commerce Store",
     description: "A modern tech store built with HTML, CSS, and JS.",
-    image: "/flat.jpg",
+    image: "flat.jpg",
     link: "https://storeexample.com",
     languages: ["HTML", "CSS", "JavaScript"],
     year: "2024",
@@ -64,24 +64,7 @@ const projects: Project[] = [
   {
     name: "Node API Server",
     description: "A RESTful API built with Node.js and Express.",
-    image: "/tall.jpg",
-    link: "https://apiserver.com",
-    languages: ["Node", "JavaScript"],
-    year: "2023",
-  }
-  ,
-  {
-    name: "E-Commerce Store",
-    description: "A modern tech store built with HTML, CSS, and JS.",
-    image: "/flat.jpg",
-    link: "https://storeexample.com",
-    languages: ["HTML", "CSS", "JavaScript"],
-    year: "2024",
-  },
-  {
-    name: "Node API Server",
-    description: "A RESTful API built with Node.js and Express.",
-    image: "/tall.jpg",
+    image: "tall.jpg",
     link: "https://apiserver.com",
     languages: ["Node", "JavaScript"],
     year: "2023",
@@ -90,7 +73,7 @@ const projects: Project[] = [
   {
     name: "E-Commerce Store",
     description: "A modern tech store built with HTML, CSS, and JS.",
-    image: "/flat.jpg",
+    image: "flat.jpg",
     link: "https://storeexample.com",
     languages: ["HTML", "CSS", "JavaScript"],
     year: "2024",
@@ -98,7 +81,7 @@ const projects: Project[] = [
   {
     name: "Node API Server",
     description: "A RESTful API built with Node.js and Express.",
-    image: "/tall.jpg",
+    image: "tall.jpg",
     link: "https://apiserver.com",
     languages: ["Node", "JavaScript"],
     year: "2023",
@@ -107,7 +90,7 @@ const projects: Project[] = [
   {
     name: "E-Commerce Store",
     description: "A modern tech store built with HTML, CSS, and JS.",
-    image: "/flat.jpg",
+    image: "flat.jpg",
     link: "https://storeexample.com",
     languages: ["HTML", "CSS", "JavaScript"],
     year: "2024",
@@ -115,7 +98,24 @@ const projects: Project[] = [
   {
     name: "Node API Server",
     description: "A RESTful API built with Node.js and Express.",
-    image: "/tall.jpg",
+    image: "tall.jpg",
+    link: "https://apiserver.com",
+    languages: ["Node", "JavaScript"],
+    year: "2023",
+  }
+  ,
+  {
+    name: "E-Commerce Store",
+    description: "A modern tech store built with HTML, CSS, and JS.",
+    image: "flat.jpg",
+    link: "https://storeexample.com",
+    languages: ["HTML", "CSS", "JavaScript"],
+    year: "2024",
+  },
+  {
+    name: "Node API Server",
+    description: "A RESTful API built with Node.js and Express.",
+    image: "tall.jpg",
     link: "https://apiserver.com",
     languages: ["Node", "JavaScript"],
     year: "2023",

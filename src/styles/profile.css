@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--bg);
+    background: var(--mainbg);
     color: #f5f5f5;
     padding:0;
     text-align: center; 
@@ -41,7 +41,7 @@
     margin: auto;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid #58a6ff;
+    border: 3px solid var(--special);
   }
   
   .profile-img {
@@ -53,7 +53,7 @@
   .profile-name {
     font-size: 1.8rem;
     margin-bottom: 0.3rem;
-    color: #58a6ff;
+    color: var(--special);
   }
   
   .profile-title {
@@ -64,7 +64,7 @@
   
   .profile-bio {
     font-size: 0.95rem;
-    color: #c9d1d9;
+    color: var(--text);
     line-height: 1.6;
     margin-bottom: 1.8rem;
   }
@@ -110,10 +110,12 @@
     .profile-section {
       padding: 2rem 1rem;
       height: auto;
+        background: var(--bg);
     }
   
     .profile-card {
       width: 100%; 
+      background: var(--mainbg);
     }
     .profile-img-wrapper {
       width:150px;

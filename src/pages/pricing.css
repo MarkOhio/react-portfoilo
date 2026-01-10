@@ -1,6 +1,6 @@
 /* File: pricing.css */
 
-.pricing-page { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 1vh; padding: 2vh 0; color: #fff; background-color: #111; font-family: 'Poppins', sans-serif; }
+.pricing-page { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 1vh; padding: 2vh 0; color: var(--text); background-color: var(--mainbg); font-family: 'Poppins', sans-serif; }
 
 .dotted-row { border-top: 2px dotted #444; width: 100%; margin: 1rem 0; }
 
@@ -11,9 +11,9 @@
 .plans-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
 
 .plan-card {
-     width: 30vw; height: max-content; background: #000000; border-radius: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: transform 0.3s; 
+     width: 30vw; height: max-content; background: var(--color); border-radius: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: transform 0.3s; 
 }
-
+  
 .plan-card:hover { transform: scale(1.05); }
 
 .plan-card h3 { font-size: 2.2rem; font-weight: 600; margin: 2vh 0; }
@@ -28,7 +28,7 @@
     margin-left: 1rem;
  }
 
-.small-card { width: 40vw; height: 24vh; background: #000; border-radius: 10px; display: grid; justify-content: center; /*  align-items: center ; */text-align: center; transition: background 0.3s;  overflow-y: auto;
+.small-card { width: 100%; height: 24vh; border:2px dashed var(--seein); border-radius: 10px; display: grid; justify-content: center; /*  align-items: center ; */text-align: center; transition: background 0.3s;  overflow-y: auto;
 padding: 2vh;
 } 
 .small-card  h2{
@@ -37,7 +37,7 @@ padding: 2vh;
   padding: 0;
 }
 
-.small-card:hover { background: #333; }
+.small-card:hover { background: var(--bg);}
 
 /* ---------- PAYMENT BUTTONS ---------- */
 
@@ -47,9 +47,9 @@ padding: 2vh;
 
 .pay-control { position: relative; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
 
-.pay-pill { background: #000; border: none; color: #fff; font-weight: 600; border-radius: 50px; padding: 0.8rem 2rem; cursor: pointer; transition: background 0.3s; }
+.pay-pill { background: var(--bg); border: none; color:var(--btntext); font-weight: 600; border-radius: 50px; padding: 0.8rem 2rem; cursor: pointer; transition: background 0.3s; }
 
-.pay-pill:hover { background: #222; }
+.pay-pill:hover { background: var(--bg);}
 
 .pay-control.expanded .pay-pill { border-radius: 50px 0 0 50px; }
 
@@ -98,7 +98,7 @@ padding: 2vh;
     padding: 0;
     margin: 2vh 0;
     max-width: 600px;
-    background: #2a2a2a;
+    background:var(--bg);
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     overflow: auto;
@@ -110,7 +110,7 @@ padding: 2vh;
   
   .plan-list li {
     padding: 12px 18px;
-    border-bottom: 1px dashed #ccc;
+    border-bottom: 1px dashed var(--text);
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.8s ease, transform 0.8s ease;
@@ -158,12 +158,13 @@ padding: 2vh;
    .payments-row { display:  block;  float:left;  justify-content: left; gap: 2vh; align-items: left; width: 100vw; max-width: 700px; position: relative; }
    .pay-pill { margin: 1vh 0;}
    .plan-card {
-     width: 80vw; height: auto; background: #000; border-radius: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: transform 0.3s; 
+     width: 90vw; height: auto; background: var(--color); border-radius: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: transform 0.3s; 
 }
     .plan-list {
-   width: 70vw; 
+   width: 80vw; 
   }
 .other-payments {  
     margin-left: 0rem;
+    padding: 2vh;
  }
 }

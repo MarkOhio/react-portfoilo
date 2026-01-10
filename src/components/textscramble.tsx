@@ -18,7 +18,7 @@ export default function TechScramble() {
 
   const [output, setOutput] = useState('');
   const indexRef = useRef(0);
-  const frameRef = useRef<number>();
+  const frameRef = useRef<number | null>(null);
   const resolvingRef = useRef(false);
 
   const interval = 4000;

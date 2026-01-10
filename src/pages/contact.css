@@ -30,6 +30,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  color: var(--text);
 }
 /* Responsive layout */
 @media (max-width: 1024px) {

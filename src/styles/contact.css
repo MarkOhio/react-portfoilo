@@ -1,12 +1,11 @@
 /* src/styles/contact.css */
 .contact-section {
     padding: 1rem 2rem;
-    text-align: center;
-    background: #0a0a0a00;
+    text-align: center; 
     color: #fff;
-     border: 2px dashed black;
+     border: 2px dashed var(--bg);
         border-radius: 20px;
-        background-color: #0000005d;
+        background-color: var(--seein);
   }
   #title{
     margin-bottom : 6vh;
@@ -49,8 +48,8 @@
   }
   
   .btn.send-btn {
-    background: #f39c12;
-    color: #000;
+    background: var(--special);
+    color: var(--btntext);
     font-weight: 600;
     padding: 0.9rem;
     border-radius: 8px;
@@ -59,7 +58,7 @@
   }
   
   .btn.send-btn:hover {
-    background: #ffb341;
+    background:var(--btnbg);
   }
   
   .status {
@@ -77,13 +76,13 @@
   }
   
   .social-links a {
-    color: #f39c12;
+    color: var(--special);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
   }
   
   .social-links a:hover {
-    color: #ffb341;
+    color: var(--text);
   }
   

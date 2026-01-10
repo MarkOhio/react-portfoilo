@@ -6,14 +6,14 @@ const localBanks = [
   {
     id: "bank1",
     label: "GTBank",
-    image: "/flat.jpg",
+    image: "flat.jpg",
     accountName: "Mark Obosojie Ohio",
     accountNumber: "0123456789"
   },
   {
     id: "bank2",
     label: "Access Bank",
-    image: "/tall.jpg",
+    image: "tall.jpg",
     accountName: "Mark Obosojie Ohio",
     accountNumber: "0123456789"
   }

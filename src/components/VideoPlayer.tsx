@@ -7,10 +7,10 @@ function VideoPlayer() {
         width="233px"
         height="auto"
         controls
-        poster="/flat.jpg" // optional
+        poster="flat.jpg" // optional
         id="demoVid"
       >
-        <source src="/demovid.mp4" type="video/mp4" />
+        <source src="demovid.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>

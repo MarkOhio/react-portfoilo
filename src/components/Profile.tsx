@@ -2,6 +2,7 @@
 import React from "react";
 import "../styles/profile.css";
  import Textscramble from '../components/textscramble'
+  import { Link, useNavigate } from "react-router-dom";
 
 const Profile: React.FC = () => {
   return (
@@ -10,7 +11,7 @@ const Profile: React.FC = () => {
 
         <div className="profilearrangement">
         <div className="profile-img-wrapper">
-          <img src="/tall.jpg" alt="Profile" className="profile-img" />
+          <img src="tall.jpg" alt="Profile" className="profile-img" />
         </div>
 
         <p className="profile-bio">
@@ -33,9 +34,9 @@ const Profile: React.FC = () => {
           <a href=" /Mark Obosojie Ohio cv.pdf" download className="btn primary">
             Download CV
           </a>
-          <a href="#contact" className="btn secondary"  onClick={() => window.location = './Contact'}>
+          <Link to="/contact" className="btn secondary">
             Hire Me
-          </a>
+          </Link>
         </div>
        </div>
 

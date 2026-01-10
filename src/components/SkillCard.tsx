@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import "../styles/skills.css";
+ import { Link, useNavigate } from "react-router-dom";
 
 interface Skill {
   name: string;
@@ -10,20 +11,20 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-  { name: "HTML", percent: 54, color: "#E34C26", icon: "../images/logo.png" },
-  { name: "CSS", percent: 90, color: "#264de4", icon: "../images/logo.png" },
-  { name: "JavaScript", percent: 85, color: "#F0DB4F", icon: "../images/logo.png" },
-  { name: "React", percent: 80, color: "#61DAFB", icon: "../images/logo.png" },
-  { name: "TypeScript", percent: 75, color: "#3178C6", icon: "../images/logo.png" },
-  { name: "Node.js", percent: 70, color: "#68A063", icon: "../images/logo.png" },
-  { name: "Node.js", percent: 70, color: "#68A063", icon: "../images/logo.png" },
-  { name: "HTML", percent: 54, color: "#E34C26", icon: "../images/logo.png" },
-  { name: "CSS", percent: 90, color: "#264de4", icon: "../images/logo.png" },
-  { name: "JavaScript", percent: 85, color: "#F0DB4F", icon: "../images/logo.png" },
-  { name: "React", percent: 80, color: "#61DAFB", icon: "../images/logo.png" },
-  { name: "TypeScript", percent: 75, color: "#3178C6", icon: "../images/logo.png" },
-  { name: "Node.js", percent: 70, color: "#68A063", icon: "../images/logo.png" },
-  { name: "Node.js", percent: 70, color: "#68A063", icon: "../images/logo.png" },
+  { name: "HTML", percent: 54, color: "#E34C26", icon: "logo.png" },
+  { name: "CSS", percent: 90, color: "#264de4", icon: "logo.png" },
+  { name: "JavaScript", percent: 85, color: "#F0DB4F", icon: "logo.png" },
+  { name: "React", percent: 80, color: "#61DAFB", icon: "logo.png" },
+  { name: "TypeScript", percent: 75, color: "#3178C6", icon: "logo.png" },
+  { name: "Node.js", percent: 70, color: "#68A063", icon: "logo.png" },
+  { name: "Node.js", percent: 70, color: "#68A063", icon: "logo.png" },
+  { name: "HTML", percent: 54, color: "#E34C26", icon: "logo.png" },
+  { name: "CSS", percent: 90, color: "#264de4", icon: "logo.png" },
+  { name: "JavaScript", percent: 85, color: "#F0DB4F", icon: "logo.png" },
+  { name: "React", percent: 80, color: "#61DAFB", icon: "logo.png" },
+  { name: "TypeScript", percent: 75, color: "#3178C6", icon: "logo.png" },
+  { name: "Node.js", percent: 70, color: "#68A063", icon: "logo.png" },
+  { name: "Node.js", percent: 70, color: "#68A063", icon: "logo.png" },
   
 ];
 
@@ -82,8 +83,10 @@ const Skills: React.FC = () => {
         I’m always learning and improving my skill set to stay up-to-date with
         new technologies.
       </p>
-      <button className="skills-btn" onClick={() => window.location = './Projects'}>View My Projects</button>
-    </section>
+      <Link to="/projects" className="skills-btn">
+        View My Projects
+      </Link>
+      </section>
   );
 };
 

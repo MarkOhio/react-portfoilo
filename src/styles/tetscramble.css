@@ -7,6 +7,6 @@
   white-space: nowrap;
   font-family: inherit;
   font-size: 2rem;
-  color: inherit;
+  color: var(--text);
   width: 100px;
 }

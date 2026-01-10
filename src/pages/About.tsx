@@ -16,7 +16,7 @@ const About: React.FC = () => {
      
     
    <div className="grid">
-  <div className="box box-1"> <Profile /></div>
+  <div className="box box-1 slide-down-fade"> <Profile /></div>
   <div className="box box-2"> <Testimonials /> </div>
   <div className="box box-3"> <SkillCard /> </div>
 </div>

@@ -1,9 +1,10 @@
 
 import React, { useEffect, useRef, useState } from 'react'; 
+
 import '../styles/PriceQuestion.css';
 
 /* =====================  EDIT HERE ONLY  ===================== */
-const VIDEO_SRC       = '/demovid.mp4';
+const VIDEO_SRC       = 'demovid.mp4';
 const VIDEO_STOPS     = [5, 15, 20, 30];
 const MANUAL_DISCOUNT = 0;
 
@@ -84,7 +85,7 @@ function numToWords(n: number): string {
 
 
 /* ----------  COMPONENT  ---------- */
-function ProjectPriceQuestion(): JSX.Element {
+function ProjectPriceQuestion(): React.ReactElement {
   const videoEl = useRef<HTMLVideoElement>(null);
 
   const [answers, setAnswers] = useState<
@@ -151,7 +152,10 @@ function ProjectPriceQuestion(): JSX.Element {
   /* ---- render ---- */
   return (
     <div className="pq-wrap">
-
+      <div className="">
+        <h2> pricing video</h2>
+        <p>watch the video and pick the option closer to your requirements to get and estimate of ypur website price</p>
+      </div>
       <div className="pq-video-box">
         <video
           ref={videoEl}
@@ -192,6 +196,7 @@ function ProjectPriceQuestion(): JSX.Element {
           <a className="pq-wa" href={waText} target="_blank" rel="noreferrer">
             Send via WhatsApp
           </a>
+          <p >refresh page to start video again</p>
         </div>
       )}
     </div>

@@ -6,17 +6,18 @@ import "../styles/SocialMedia.css";
 
 type SocialItem = {
   platform: string;
-  icon: React.ReactNode;
+  icon: string;
   username: string;
   href?: string;
+ 
 };
 
 const DEFAULT_ITEMS: SocialItem[] = [
-  { platform: "Facebook", icon: "/flat.jpg", username: "@user-namebtbtrb", href: "https://facebook.com" },
-  { platform: "Instagram", icon: "/flat.jpg", username: "@user-name", href: "https://instagram.com" },
-  { platform: "X", icon: "/flat.jpg", username: "@user-name", href: "https://x.com" },
-  { platform: "WhatsApp", icon: "/flat.jpg", username: "@user-name", href: "https://wa.me/" },
-  { platform: "LinkedIn", icon: "/flat.jpg", username: "@user-name", href: "https://linkedin.com" },
+  { platform: "Facebook", icon: "flat.jpg", username: "@user-namebtbtrb", href: "https://facebook.com" },
+  { platform: "Instagram", icon: "flat.jpg", username: "@user-name", href: "https://instagram.com" },
+  { platform: "X", icon: "flat.jpg", username: "@user-name", href: "https://x.com" },
+  { platform: "WhatsApp", icon: "flat.jpg", username: "@user-name", href: "https://wa.me/" },
+  { platform: "LinkedIn", icon: "flat.jpg", username: "@user-name", href: "https://linkedin.com" },
 ];
 
 interface SocialMediaLinksProps {

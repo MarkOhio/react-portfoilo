@@ -36,7 +36,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="nav-logo" onClick={closeMenu}>
-        <img id="nav-logo" src="/logo.png" alt="Logo" />
+        <img id="nav-logo" src="logo.png" alt="Logo" />
       </div>
 
 
@@ -62,9 +62,9 @@ const Navbar = () => {
 
 
      <div className="">
-        <a href="#contact" className="hire-btn"  onClick={() => window.location = './Contact'}>
-        Hire Me
-        </a>
+        <Link to="/contact" className="hire-btn">
+          Hire Me
+        </Link>
         <ThemeToggle />
       </div>
 
